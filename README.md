@@ -3,7 +3,7 @@ StudentCRUDRestAPI
 
 This README file provides information on setting up and using the Student CRUD REST API. The API is designed to manage student records, allowing users to perform operations such as adding, retrieving, updating, and deleting student information.
 
-Table of Contents
+# Table of Contents
 Prerequisites
 Installation
 API Endpoints
@@ -13,13 +13,13 @@ Get a student by ID
 Update existing student information
 Delete a student record
 
-Prerequisites
+# Prerequisites
 
-Installation
+# Installation
 
-API Endpoints
-Add a new student
-Endpoint: POST /api/students
+# API Endpoints
+#Add a new student
+#Endpoint: POST /api/students
 Request Body:
 {
   "name": "John Doe",
