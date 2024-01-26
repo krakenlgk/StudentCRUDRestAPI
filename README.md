@@ -42,13 +42,15 @@ flask run
 #Add a new student
 #Endpoint: POST /api/students
 Request Body:
+```
 {
   "name": "John Doe",
   "age": 21,
   "grade": "A"
 }
-
+```
 Response:
+```
 {
   "success": true,
   "message": "Student added successfully",
@@ -59,10 +61,11 @@ Response:
     "grade": "A"
   }
 }
-
+```
 Get all students
 Endpoint: GET /api/students
 Response:
+```
 {
   "success": true,
   "message": "Students retrieved successfully",
@@ -82,10 +85,11 @@ Response:
     // More student records...
   ]
 }
-
+```
 Get a student by ID
 Endpoint: GET /api/students/:id
 Response:
+```
 {
   "success": true,
   "message": "Student retrieved successfully",
@@ -96,16 +100,18 @@ Response:
     "grade": "A"
   }
 }
-
+```
 Update existing student information
 Endpoint: PUT /api/students/:id
 Request Body:
+```
 {
   "age": 22,
   "grade": "B"
 }
-
+```
 Response:
+```
 {
   "success": true,
   "message": "Student updated successfully",
@@ -116,10 +122,11 @@ Response:
     "grade": "B"
   }
 }
-
+```
 Delete a student record
 Endpoint: DELETE /api/students/:id
 Response:
+```
 {
   "success": true,
   "message": "Student deleted successfully",
@@ -130,4 +137,4 @@ Response:
     "grade": "B"
   }
 }
-
+```
