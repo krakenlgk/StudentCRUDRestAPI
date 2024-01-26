@@ -21,26 +21,26 @@ Flask
 MongoDB (Make sure MongoDB server is running)
 
 # Installation
-Clone the repository:
-git clone https://github.com/yourusername/StudentCRUDRestAPI.git
-cd StudentCRUDRestAPI
+Clone the repository:  
+git clone https://github.com/yourusername/StudentCRUDRestAPI.git  
+cd StudentCRUDRestAPI  
 
 Install dependencies:
 pip install -r requirements.txt
 
 Set up environment variables:
-Create a .env file in the root directory and add the following:
-FLASK_APP=app.py
-FLASK_ENV=development
-MONGODB_URI=mongodb://localhost:27017/studentdb
+Create a .env file in the root directory and add the following:  
+FLASK_APP=app.py  
+FLASK_ENV=development  
+MONGODB_URI=mongodb://localhost:27017/studentdb  
 
 
 Start the server:
 flask run
 
 # API Endpoints
-#Add a new student
-#Endpoint: POST /api/students
+## Add a new student  
+## Endpoint: POST /api/students  
 Request Body:
 ```
 {
@@ -62,8 +62,8 @@ Response:
   }
 }
 ```
-Get all students
-Endpoint: GET /api/students
+## Get all students
+## Endpoint: GET /api/students
 Response:
 ```
 {
@@ -86,8 +86,8 @@ Response:
   ]
 }
 ```
-Get a student by ID
-Endpoint: GET /api/students/:id
+## Get a student by ID
+## Endpoint: GET /api/students/:id
 Response:
 ```
 {
@@ -101,8 +101,8 @@ Response:
   }
 }
 ```
-Update existing student information
-Endpoint: PUT /api/students/:id
+## Update existing student information
+## Endpoint: PUT /api/students/:id
 Request Body:
 ```
 {
@@ -123,8 +123,8 @@ Response:
   }
 }
 ```
-Delete a student record
-Endpoint: DELETE /api/students/:id
+## Delete a student record
+## Endpoint: DELETE /api/students/:id
 Response:
 ```
 {
