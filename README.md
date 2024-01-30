@@ -22,21 +22,28 @@ MongoDB (Make sure MongoDB server is running)
 
 # Installation
 Clone the repository:  
+```
 git clone https://github.com/yourusername/StudentCRUDRestAPI.git  
 cd StudentCRUDRestAPI  
+```
 
 Install dependencies:
+```
 pip install -r requirements.txt
+```
 
 Set up environment variables:
+```
 Create a .env file in the root directory and add the following:  
 FLASK_APP=app.py  
 FLASK_ENV=development  
 MONGODB_URI=mongodb://localhost:27017/studentdb  
-
+```
 
 Start the server:
+```
 flask run
+```
 
 # API Endpoints
 ## Add a new student  
