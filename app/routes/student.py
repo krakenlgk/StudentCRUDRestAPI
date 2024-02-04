@@ -1,3 +1,4 @@
+import logging
 from flask import Blueprint, request
 from flask_restful import Api, Resource
 from app.models import db, Student
@@ -5,10 +6,14 @@ from app.models import db, Student
 student_bp = Blueprint('student', __name__)
 api = Api(student_bp)
 
+# Configure logging
+logging.basicConfig(level=logging.INFO)  # Set the logging level as needed
+
 class StudentResource(Resource):
     def get(self, student_id):
         try:
             student = Student.query.get_or_404(student_id)
+            logging.info(f"Student retrieved: {student.name} (ID: {student.id})")
             return {
                 'success': True,
                 'message': 'Student retrieved successfully',
@@ -20,6 +25,7 @@ class StudentResource(Resource):
                 }
             }
         except Exception as e:
+            logging.error(f"Error retrieving student: {str(e)}")
             return {
                 'success': False,
                 'message': 'Error retrieving student',
@@ -37,6 +43,7 @@ class StudentResource(Resource):
 
             db.session.commit()
 
+            logging.info(f"Student updated: {student.name} (ID: {student.id})")
             return {
                 'success': True,
                 'message': 'Student updated successfully',
@@ -48,6 +55,7 @@ class StudentResource(Resource):
                 }
             }
         except Exception as e:
+            logging.error(f"Error updating student: {str(e)}")
             return {
                 'success': False,
                 'message': 'Error updating student',
@@ -60,6 +68,7 @@ class StudentResource(Resource):
             db.session.delete(student)
             db.session.commit()
 
+            logging.info(f"Student deleted: {student.name} (ID: {student.id})")
             return {
                 'success': True,
                 'message': 'Student deleted successfully',
@@ -71,6 +80,7 @@ class StudentResource(Resource):
                 }
             }
         except Exception as e:
+            logging.error(f"Error deleting student: {str(e)}")
             return {
                 'success': False,
                 'message': 'Error deleting student',
@@ -91,12 +101,14 @@ class StudentsResource(Resource):
                 for student in students
             ]
 
+            logging.info("Students retrieved successfully")
             return {
                 'success': True,
                 'message': 'Students retrieved successfully',
                 'data': students_data
             }
         except Exception as e:
+            logging.error(f"Error retrieving students: {str(e)}")
             return {
                 'success': False,
                 'message': 'Error retrieving students',
@@ -114,6 +126,7 @@ class StudentsResource(Resource):
             db.session.add(new_student)
             db.session.commit()
 
+            logging.info(f"Student added: {new_student.name} (ID: {new_student.id})")
             return {
                 'success': True,
                 'message': 'Student added successfully',
@@ -125,6 +138,7 @@ class StudentsResource(Resource):
                 }
             }
         except Exception as e:
+            logging.error(f"Error adding student: {str(e)}")
             return {
                 'success': False,
                 'message': 'Error adding student',
