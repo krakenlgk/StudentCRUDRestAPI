@@ -6,7 +6,7 @@ class StudentTestCase(TestCase):
     def create_app(self):
         app = create_app()
         app.config['TESTING'] = True
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+        app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///students.db')
         return app
 
     def setUp(self):
